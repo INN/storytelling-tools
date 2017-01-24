@@ -36,7 +36,7 @@
  */
 
 // Include additional php files here.
- require 'includes/class-settings.php';
+require 'includes/class-soundcite-settings.php';
 
 /**
  * Main initiation class
@@ -94,12 +94,12 @@ final class Knight_Lab_Storytelling_Tools {
 	protected static $single_instance = null;
 
 	/**
-	 * Instance of KLST_Settings
+	 * Instance of KLST_Soundcite_Settings
 	 *
 	 * @since NEXT
-	 * @var KLST_Settings
+	 * @var KLST_Soundcite_Settings
 	 */
-	protected $settings;
+	protected $soundcite_settings;
 
 	/**
 	 * Creates or returns an instance of this class.
@@ -134,7 +134,7 @@ final class Knight_Lab_Storytelling_Tools {
 	 */
 	public function plugin_classes() {
 		// Attach other plugin classes to the base plugin class.
-		$this->settings = new KLST_Settings( $this );
+		$this->soundcite_settings = new KLST_Soundcite_Settings( $this );
 	} // END OF PLUGIN CLASSES FUNCTION
 
 	/**
@@ -285,8 +285,7 @@ final class Knight_Lab_Storytelling_Tools {
 			case 'basename':
 			case 'url':
 			case 'path':
-			case 'settings':
-			case 'settings':
+			case 'soundcite_settings':
 				return $this->$field;
 			default:
 				throw new Exception( 'Invalid ' . __CLASS__ . ' property: ' . $field );

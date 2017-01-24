@@ -1,17 +1,17 @@
 <?php
 /**
- * Knight Lab Storytelling Tools Settings
+ * Knight Lab Storytelling Tools Soundcite Settings
  *
  * @since NEXT
  * @package Knight Lab Storytelling Tools
  */
 
 /**
- * Knight Lab Storytelling Tools Settings class.
+ * Knight Lab Storytelling Tools Soundcite Settings class.
  *
  * @since NEXT
  */
-class KLST_Settings {
+class KLST_Soundcite_Settings {
 	/**
 	 * Parent plugin class
 	 *
@@ -26,7 +26,7 @@ class KLST_Settings {
 	 * @var    string
 	 * @since  NEXT
 	 */
-	protected $key = 'knight_lab_storytelling_tools_settings';
+	protected $key = 'knight_lab_storytelling_tools_soundcite_settings';
 
 	/**
 	 * Options page metabox id
@@ -34,7 +34,7 @@ class KLST_Settings {
 	 * @var    string
 	 * @since  NEXT
 	 */
-	protected $metabox_id = 'knight_lab_storytelling_tools_settings_metabox';
+	protected $metabox_id = 'knight_lab_storytelling_tools_soundcite_settings_metabox';
 
 	/**
 	 * Options Page title
@@ -61,7 +61,7 @@ class KLST_Settings {
 		$this->plugin = $plugin;
 		$this->hooks();
 
-		$this->title = __( 'Knight Lab SoundCite', 'knight-lab-storytelling-tools' );
+		$this->title = __( 'Knight Lab Soundcite', 'knight-lab-storytelling-tools' );
 	}
 
 	/**
@@ -92,7 +92,7 @@ class KLST_Settings {
 	 * @return void
 	 */
 	public function add_options_page() {
-		$this->options_page = add_options_page(
+		$this->options_page = add_menu_page(
 			$this->title,
 			$this->title,
 			'manage_options',
