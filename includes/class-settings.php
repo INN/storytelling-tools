@@ -61,7 +61,7 @@ class KLST_Settings {
 		$this->plugin = $plugin;
 		$this->hooks();
 
-		$this->title = __( 'Knight Lab Storytelling Tools Settings', 'knight-lab-storytelling-tools' );
+		$this->title = __( 'Knight Lab SoundCite', 'knight-lab-storytelling-tools' );
 	}
 
 	/**
@@ -92,7 +92,7 @@ class KLST_Settings {
 	 * @return void
 	 */
 	public function add_options_page() {
-		$this->options_page = add_menu_page(
+		$this->options_page = add_options_page(
 			$this->title,
 			$this->title,
 			'manage_options',
@@ -109,7 +109,7 @@ class KLST_Settings {
 	 */
 	public function admin_page_display() {
 		?>
-		<div class="wrap cmb2-options-page <?php echo esc_attr( $this->key ); ?>">
+		<div class="wrap options-page <?php echo esc_attr( $this->key ); ?>">
 			<h2><?php echo esc_html( get_admin_page_title() ); ?></h2>
 		</div>
 		<?php
