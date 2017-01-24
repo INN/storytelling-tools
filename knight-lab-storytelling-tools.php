@@ -40,26 +40,8 @@
  */
 
 
-/**
- * Autoloads files with classes when needed
- *
- * @since  NEXT
- * @param  string $class_name Name of the class being requested.
- * @return void
- */
-function knight_lab_storytelling_tools_autoload_classes( $class_name ) {
-	if ( 0 !== strpos( $class_name, 'KLST_' ) ) {
-		return;
-	}
-
-	$filename = strtolower( str_replace(
-		'_', '-',
-		substr( $class_name, strlen( 'KLST_' ) )
-	) );
-
-	Knight_Lab_Storytelling_Tools::include_file( 'includes/class-' . $filename );
-}
-spl_autoload_register( 'knight_lab_storytelling_tools_autoload_classes' );
+// Include additional php files here.
+ require 'includes/class-settings.php';
 
 /**
  * Main initiation class
@@ -117,6 +99,14 @@ final class Knight_Lab_Storytelling_Tools {
 	protected static $single_instance = null;
 
 	/**
+	 * Instance of KLST_Settings
+	 *
+	 * @since NEXT
+	 * @var KLST_Settings
+	 */
+	protected $settings;
+
+	/**
 	 * Creates or returns an instance of this class.
 	 *
 	 * @since  NEXT
@@ -149,7 +139,7 @@ final class Knight_Lab_Storytelling_Tools {
 	 */
 	public function plugin_classes() {
 		// Attach other plugin classes to the base plugin class.
-		// $this->plugin_class = new KLST_Plugin_Class( $this );
+		$this->settings = new KLST_Settings( $this );
 	} // END OF PLUGIN CLASSES FUNCTION
 
 	/**
@@ -197,7 +187,7 @@ final class Knight_Lab_Storytelling_Tools {
 		if ( ! $this->check_requirements() ) {
 			return;
 		}
-		
+
 		// load translated strings for plugin
 		load_plugin_textdomain( 'knight-lab-storytelling-tools', false, dirname( $this->basename ) . '/languages/' );
 
@@ -263,11 +253,11 @@ final class Knight_Lab_Storytelling_Tools {
 	 */
 	public function requirements_not_met_notice() {
 		// compile default message
-		$default_message = sprintf( 
-			__( 'Knight Lab Storytelling Tools is missing requirements and has been <a href="%s">deactivated</a>. Please make sure all requirements are available.', 'knight-lab-storytelling-tools' ), 
-			admin_url( 'plugins.php' ) 
+		$default_message = sprintf(
+			__( 'Knight Lab Storytelling Tools is missing requirements and has been <a href="%s">deactivated</a>. Please make sure all requirements are available.', 'knight-lab-storytelling-tools' ),
+			admin_url( 'plugins.php' )
 		);
-		
+
 		// default details to null
 		$details = null;
 
@@ -300,51 +290,12 @@ final class Knight_Lab_Storytelling_Tools {
 			case 'basename':
 			case 'url':
 			case 'path':
+			case 'settings':
+			case 'settings':
 				return $this->$field;
 			default:
 				throw new Exception( 'Invalid ' . __CLASS__ . ' property: ' . $field );
 		}
-	}
-
-	/**
-	 * Include a file from the includes directory
-	 *
-	 * @since  NEXT
-	 * @param  string $filename Name of the file to be included.
-	 * @return bool   Result of include call.
-	 */
-	public static function include_file( $filename ) {
-		$file = self::dir( $filename . '.php' );
-		if ( file_exists( $file ) ) {
-			return include_once( $file );
-		}
-		return false;
-	}
-
-	/**
-	 * This plugin's directory
-	 *
-	 * @since  NEXT
-	 * @param  string $path (optional) appended path.
-	 * @return string       Directory and path
-	 */
-	public static function dir( $path = '' ) {
-		static $dir;
-		$dir = $dir ? $dir : trailingslashit( dirname( __FILE__ ) );
-		return $dir . $path;
-	}
-
-	/**
-	 * This plugin's url
-	 *
-	 * @since  NEXT
-	 * @param  string $path (optional) appended path.
-	 * @return string       URL and path
-	 */
-	public static function url( $path = '' ) {
-		static $url;
-		$url = $url ? $url : trailingslashit( plugin_dir_url( __FILE__ ) );
-		return $url . $path;
 	}
 }
 
