@@ -1,17 +1,17 @@
 <?php
 /**
- * Knight Lab Storytelling Tools Soundcite Settings
+ * Knight Lab Storytelling Tools SoundCite Settings
  *
  * @since NEXT
  * @package Knight Lab Storytelling Tools
  */
 
 /**
- * Knight Lab Storytelling Tools Soundcite Settings class.
+ * Knight Lab Storytelling Tools SoundCite Settings class.
  *
  * @since NEXT
  */
-class KLST_Soundcite_Settings {
+class KLST_SoundCite_Settings {
 	/**
 	 * Parent plugin class
 	 *
@@ -61,7 +61,7 @@ class KLST_Soundcite_Settings {
 		$this->plugin = $plugin;
 		$this->hooks();
 
-		$this->title = __( 'Knight Lab Soundcite', 'knight-lab-storytelling-tools' );
+		$this->title = __( 'Knight Lab SoundCite', 'knight-lab-storytelling-tools' );
 	}
 
 	/**

@@ -94,10 +94,10 @@ final class Knight_Lab_Storytelling_Tools {
 	protected static $single_instance = null;
 
 	/**
-	 * Instance of KLST_Soundcite_Settings
+	 * Instance of KLST_SoundCite_Settings
 	 *
 	 * @since NEXT
-	 * @var KLST_Soundcite_Settings
+	 * @var KLST_SoundCite_Settings
 	 */
 	protected $soundcite_settings;
 
@@ -134,7 +134,7 @@ final class Knight_Lab_Storytelling_Tools {
 	 */
 	public function plugin_classes() {
 		// Attach other plugin classes to the base plugin class.
-		$this->soundcite_settings = new KLST_Soundcite_Settings( $this );
+		$this->soundcite_settings = new KLST_SoundCite_Settings( $this );
 	} // END OF PLUGIN CLASSES FUNCTION
 
 	/**
