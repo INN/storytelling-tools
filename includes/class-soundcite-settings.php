@@ -92,7 +92,7 @@ class KLST_Soundcite_Settings {
 	 * @return void
 	 */
 	public function add_options_page() {
-		$this->options_page = add_menu_page(
+		$this->options_page = add_options_page(
 			$this->title,
 			$this->title,
 			'manage_options',
