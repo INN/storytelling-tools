@@ -1,0 +1,18 @@
+{
+  "generator-plugin-wp": {
+    "name": "Knight Lab Storytelling Tools",
+    "homepage": "http://knightlab.northwestern.edu/projects/#storytelling",
+    "description": "Implement the Knight Lab storytelling tools into your WordPress site!",
+    "version": "1.0.0",
+    "author": "inn_nerds",
+    "authoremail": "nerds@inn.org",
+    "authorurl": "http://nerds.inn.org",
+    "license": "GPLv2",
+    "slug": "knight-lab-storytelling-tools",
+    "classname": "Knight_Lab_Storytelling_Tools",
+    "classprefix": "KLST_",
+    "prefix": "knight_lab_storytelling_tools",
+    "year": 2017,
+    "currentVersionWP": "4.7.1"
+  }
+}
