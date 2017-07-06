@@ -38,6 +38,7 @@
 // Include additional php files here.
 require 'includes/class-soundcite-settings.php';
 require 'includes/class-embeds.php';
+require 'includes/class-shortcodes.php';
 
 /**
  * Main initiation class
@@ -111,6 +112,14 @@ final class Knight_Lab_Storytelling_Tools {
 	protected $embeds;
 
 	/**
+	 * Instance of KLST_Shortcodes
+	 *
+	 * @since1.0.0
+	 * @var KLST_Shortcodes
+	 */
+	protected $shortcodes;
+
+	/**
 	 * Creates or returns an instance of this class.
 	 *
 	 * @since  NEXT
@@ -145,6 +154,7 @@ final class Knight_Lab_Storytelling_Tools {
 		// Attach other plugin classes to the base plugin class.
 		$this->soundcite_settings = new KLST_SoundCite_Settings( $this );
 		$this->embeds = new KLST_Embeds( $this );
+		$this->shortcodes = new KLST_Shortcodes( $this );
 	} // END OF PLUGIN CLASSES FUNCTION
 
 	/**
@@ -297,6 +307,7 @@ final class Knight_Lab_Storytelling_Tools {
 			case 'path':
 			case 'soundcite_settings':
 			case 'embeds':
+			case 'shortcodes':
 				return $this->$field;
 			default:
 				throw new Exception( 'Invalid ' . __CLASS__ . ' property: ' . $field );

@@ -73,9 +73,6 @@ class KLST_SoundCite_Settings {
 	public function hooks() {
 		add_action( 'admin_init', array( $this, 'admin_init' ) );
 		add_action( 'admin_menu', array( $this, 'add_options_page' ) );
-		add_action( 'media_buttons', array( $this, 'soundcite_editor_button' ), 11 );
-		add_action( 'admin_head', array( $this, 'soundcite_editor_button_js' ) );
-
 	}
 
 	/**
@@ -116,31 +113,5 @@ class KLST_SoundCite_Settings {
 			<h2><?php echo esc_html( get_admin_page_title() ); ?></h2>
 		</div>
 		<?php
-	}
-
-	/**
-	 * Add SoundCite button above TinyMCE editor
-	 *
-	 * @since  NEXT
-	 * @return void
-	 */
-	public function soundcite_editor_button() {
-	    echo '<button type="button" id="insert-soundcite-button" class="button insert-soundcite-shortcode" value="test"><span class="wp-media-buttons-icon dashicons dashicons-format-audio"></span> Add SoundCite</button>';
-	}
-
-	/**
-	 * Insert blank shortcode for SoundCite on button press
-	 *
-	 * @since  NEXT
-	 * @return void
-	 */
-	public function soundcite_editor_button_js() {
-	  echo '<script type="text/javascript">
-	    jQuery(document).ready(function($){
-	       $("#insert-soundcite-button").click(function() {
-					 send_to_editor("[soundcite url=\"\" start=\"\" end=\"\"]");
-				 })
-	    });
-	  </script>';
 	}
 }
