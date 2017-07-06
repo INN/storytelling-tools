@@ -48,7 +48,6 @@ class KLST_Shortcodes {
 	 * Add SoundCite button above TinyMCE editor
 	 *
 	 * @since  1.0.0
-	 * @return void
 	 */
 	public function soundcite_editor_button() {
 	    echo '<button type="button" id="insert-soundcite-button" class="button insert-soundcite-shortcode" value="test"><span class="wp-media-buttons-icon dashicons dashicons-format-audio"></span> Add SoundCite</button>';
@@ -58,7 +57,6 @@ class KLST_Shortcodes {
 	 * Insert blank shortcode for SoundCite on button press
 	 *
 	 * @since  1.0.0
-	 * @return void
 	 */
 	public function soundcite_editor_button_js() {
 	  echo '<script type="text/javascript">
@@ -74,7 +72,6 @@ class KLST_Shortcodes {
 	 * Process shortcode
 	 *
 	 * @since  1.0.0
-	 * @return void
 	 */
 	public function shortcode_output( $atts ) {
 		$atts = shortcode_atts( array(

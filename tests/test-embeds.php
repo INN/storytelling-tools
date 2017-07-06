@@ -1,17 +1,36 @@
 <?php
-
+/**
+ * Knight Lab Storytelling Tools Embeds Tests.
+ *
+ * @since   1.0.0
+ * @package Knight_Lab_Storytelling_Tools
+ */
 class KLST_Embeds_Test extends WP_UnitTestCase {
 
-	function test_sample() {
-		// replace this with some actual testing code
-		$this->assertTrue( true );
-	}
-
+	/**
+	 * Test if our class exists.
+	 *
+	 * @since  1.0.0
+	 */
 	function test_class_exists() {
-		$this->assertTrue( class_exists( 'KLST_Embeds') );
+		$this->assertTrue( class_exists( 'KLST_Embeds' ) );
 	}
 
+	/**
+	 * Test that we can access our class through our helper function.
+	 *
+	 * @since  1.0.0
+	 */
 	function test_class_access() {
-		$this->assertTrue( knight_lab_storytelling_tools()->embeds instanceof KLST_Embeds );
+		$this->assertInstanceOf( 'KLST_Embeds', knight_lab_storytelling_tools()->embeds );
+	}
+
+	/**
+	 * Replace this with some actual testing code.
+	 *
+	 * @since  1.0.0
+	 */
+	function test_sample() {
+		$this->assertTrue( true );
 	}
 }

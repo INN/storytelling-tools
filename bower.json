@@ -1,9 +1,9 @@
 {
   "name": "knight-lab-storytelling-tools",
-  "description": "Implement the Knight Lab storytelling tools into your WordPress site!",
+  "description": "Allows seamless embedding for the Knight Lab Storytelling Tools",
   "license": "GPLv2",
   "authors": [
-    "inn_nerds"
+    "innlabs"
   ],
   "private": true,
   "ignore": [
