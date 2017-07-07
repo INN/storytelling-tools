@@ -76,14 +76,14 @@ class KLST_Shortcodes {
 	 * @since  1.0.0
 	 */
 	public function shortcode_output( $atts ) {
+		$start = isset( $atts['start'] ) ? ' data-start="' . $atts['start'] * 1000 . '"' : '';
+		$end = isset( $atts['end'] ) ? ' data-end="' . $atts['end'] * 1000 . '"' : '';
+
 		$atts = shortcode_atts( array(
 			'text' => '',
 			'url' => '',
 		), $atts, 'soundcite' );
 
-		$start = isset( $atts['start'] ) ? ' data-start="' . $atts['start'] . '"' : '';
-		$end = isset( $atts['end'] ) ? ' data-end="' . $atts['end'] . '"' : '';
-
-		return '<span ' . $start . $end . ' data-url="' . $atts['url'] . '" class="soundcite soundcite-loaded soundcite-play">' . $atts['text'] . '</span>';
+		return '<span' . $start . $end . ' data-url="' . $atts['url'] . '" class="soundcite soundcite-loaded soundcite-play">' . $atts['text'] . '</span>';
 	}
 }
