@@ -42,6 +42,10 @@ class KLST_Shortcodes {
 		add_shortcode( 'soundcite', array( $this, 'shortcode_output' ) );
 		add_action( 'media_buttons', array( $this, 'soundcite_editor_button' ), 11 );
 		add_action( 'admin_head', array( $this, 'soundcite_editor_button_js' ) );
+		wp_enqueue_style( 'soundcite-styles', '//cdn.knightlab.com/libs/soundcite/latest/css/player.css', array(), '1.0.0' );
+		wp_enqueue_script( 'soundcite-script', '//cdn.knightlab.com/libs/soundcite/latest/js/soundcite.min.js', array(), '1.0.0', true );
+
+
 	}
 
 	/**
