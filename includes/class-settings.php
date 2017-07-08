@@ -61,9 +61,6 @@ class KLST_Settings {
 	public function __construct( $plugin ) {
 		$this->plugin = $plugin;
 		$this->hooks();
-
-		// Set our title.
-		$this->title = esc_attr__( 'Knight Lab Storytelling Tools Settings', 'knight-lab-storytelling-tools' );
 	}
 
 	/**
@@ -72,59 +69,71 @@ class KLST_Settings {
 	 * @since  1.0.0
 	 */
 	public function hooks() {
-
-		// Hook in our actions to the admin.
-		add_action( 'admin_init', array( $this, 'admin_init' ) );
-		add_action( 'admin_menu', array( $this, 'add_options_page' ) );
+		add_action( 'admin_init', array( $this, 'settings_init' ) );
 	}
 
 	/**
-	 * Register our setting to WP.
+	 * Register and add settings
 	 *
 	 * @since  1.0.0
+	 *
 	 */
-	public function admin_init() {
-		register_setting( $this->key, $this->key );
-	}
+	public function settings_init() {
+		register_setting(
+			'writing', // Option group
+			'knight_lab_storytelling_tools', // Option name
+			array( $this, 'sanitize' ) // Sanitize
+		);
 
-	/**
-	 * Add menu options page.
-	 *
-	 * @since  1.0.0
-	 */
-	public function add_options_page() {
-		$this->options_page = add_menu_page(
-			$this->title,
-			$this->title,
-			'manage_options',
-			$this->key,
-			array( $this, 'admin_page_display' )
+		add_settings_section(
+			'knight_lab_storytelling_tools',
+			'Knight Lab Storytelling Tools',
+			array( $this, 'print_section_info' ),
+			'writing'
+		);
+
+		add_settings_field(
+			'soundcite',
+			'Soundcite',
+			array( $this, 'soundcite_callback' ),
+			'writing',
+			'knight_lab_storytelling_tools'
 		);
 	}
 
 	/**
-	 * Admin page markup. Mostly handled by CMB2.
-	 *
-	 * @since  1.0.0
-	 */
-	public function admin_page_display() {
-		?>
-		<div class="wrap cmb2-options-page <?php echo esc_attr( $this->key ); ?>">
-			<h2><?php echo esc_html( get_admin_page_title() ); ?></h2>
-		</div>
-		<?php
+	* Sanitize each setting field as needed
+	*
+	* @param array $input Contains all settings fields as array keys
+	*
+	* @since  1.0.0
+	*/
+	public function sanitize( $input ) {
+		$new_input = array();
+		if ( isset( $input['soundcite'] ) ) {
+			$new_input['soundcite'] = absint( $input['soundcite'] );
+		}
+
+		return $new_input;
 	}
 
 	/**
-	 * Add custom fields to the options page.
-	 *
-	 * @since  1.0.0
-	 */
-	public function add_options_page_metabox() {
-		?>
-		<div class="wrap options-page <?php echo esc_attr( $this->key ); ?>">
-			<h2><?php echo esc_html( get_admin_page_title() ); ?></h2>
-		</div>
-		<?php
+	* Print the Section text
+	*
+	* @since  1.0.0
+	*/
+	public function print_section_info() {
+		print '<em>If you don\'t want to load Soundcite on every page, you can disable it below.</em>';
+	}
+
+	/**
+	* Get the settings option array and print one of its values
+	*
+	* @since  1.0.0
+	*/
+	public function soundcite_callback() {
+		$setting = get_option( 'knight_lab_storytelling_tools' );
+		$soundcite = isset( $setting['soundcite'] ) ? intval( $setting['soundcite'] ) : '';
+		echo '<input type="checkbox" id="knight_lab_storytelling_tools" name="knight_lab_storytelling_tools[soundcite]" value="1"' . checked( 1, $soundcite, false ) . '/> Enabled';
 	}
 }
