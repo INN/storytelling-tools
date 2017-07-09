@@ -59,6 +59,7 @@ class KLST_Embeds {
 			'https://knightlab.northwestern.edu/',
 			true
 		);
+		add_action( 'enqueue_block_editor_assets', array( $this, 'gutenberg_support' ) );
 	}
 
 	/**
@@ -103,5 +104,25 @@ class KLST_Embeds {
 			esc_attr( $matches[1] )
 		);
 		return apply_filters( 'embed_knight_lab_juxtapose', $embed, $matches, $attr, $url, $rawattr );
+	}
+
+	/**
+	 * Add gutenberg support.
+	 *
+	 * @since  1.0.0
+	 */
+	public function gutenberg_support() {
+		wp_enqueue_script(
+			'gutenberg-knight-labs-storytelling-tools',
+			plugins_url( '/assets/js/gutenberg-block-soundcite.js', dirname( __FILE__ ) ),
+			array( 'wp-blocks', 'wp-i18n', 'wp-element' ),
+			filemtime( dirname( plugin_dir_path( __FILE__ ) ) . '/assets/js/gutenberg-block-soundcite.js' )
+		);
+		wp_enqueue_style(
+			'gutenberg-knight-labs-storytelling-tools-editor',
+			plugins_url( 'step-04/editor.css', __FILE__ ),
+			array( 'wp-edit-blocks' ),
+			filemtime( plugin_dir_path( __FILE__ ) . 'step-04/editor.css' )
+		);
 	}
 }
