@@ -42,8 +42,8 @@ class KLST_Shortcodes {
 		add_shortcode( 'soundcite', array( $this, 'shortcode_output' ) );
 		add_action( 'media_buttons', array( $this, 'soundcite_editor_button' ), 11 );
 		add_action( 'admin_head', array( $this, 'soundcite_editor_button_js' ) );
-		wp_enqueue_style( 'soundcite-styles', '//cdn.knightlab.com/libs/soundcite/latest/css/player.css', array(), '1.0.0' );
-		wp_enqueue_script( 'soundcite-script', '//cdn.knightlab.com/libs/soundcite/latest/js/soundcite.min.js', array(), '1.0.0', true );
+		wp_register_style( 'soundcite-styles', '//cdn.knightlab.com/libs/soundcite/latest/css/player.css', array(), '1.0.0' );
+		wp_register_script( 'soundcite-script', '//cdn.knightlab.com/libs/soundcite/latest/js/soundcite.min.js', array(), '1.0.0', true );
 	}
 
 	/**
@@ -76,6 +76,9 @@ class KLST_Shortcodes {
 	 * @since  1.0.0
 	 */
 	public function shortcode_output( $atts ) {
+		wp_enqueue_style( 'soundcite-styles' );
+		wp_enqueue_script( 'soundcite-script' );
+
 		$start = isset( $atts['start'] ) ? ' data-start="' . $atts['start'] * 1000 . '"' : '';
 		$end = isset( $atts['end'] ) ? ' data-end="' . $atts['end'] * 1000 . '"' : '';
 
