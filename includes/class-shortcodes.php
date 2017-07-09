@@ -79,14 +79,16 @@ class KLST_Shortcodes {
 		wp_enqueue_style( 'soundcite-styles' );
 		wp_enqueue_script( 'soundcite-script' );
 
-		$start = isset( $atts['start'] ) ? ' data-start="' . $atts['start'] * 1000 . '"' : '';
-		$end = isset( $atts['end'] ) ? ' data-end="' . $atts['end'] * 1000 . '"' : '';
+
+
+		$start = isset( $atts['start'] ) ? ' data-start="' . intval( trim( $atts['start'], '&quot;' ) ) * 1000 . '"' : '';
+		$end = isset( $atts['end'] ) ? ' data-end="' . intval( trim( $atts['end'], '&quot;' ) ) * 1000 . '"' : '';
 
 		$atts = shortcode_atts( array(
 			'text' => '',
 			'url' => '',
 		), $atts, 'soundcite' );
 
-		return '<span' . $start . $end . ' data-url="' . $atts['url'] . '" class="soundcite soundcite-loaded soundcite-play">' . $atts['text'] . '</span>';
+		return '<span' . $start . $end . ' data-url="' . trim( $atts['url'], '&quot;' ) . '" class="soundcite soundcite-loaded soundcite-play">' . trim( $atts['text'], '&quot;' ) . '</span>';
 	}
 }
