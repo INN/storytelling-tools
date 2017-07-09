@@ -38,8 +38,7 @@
  */
 
 
-// Include additional php files here.
-require 'includes/class-settings.php';
+// Include additional php files here.;
 require 'includes/class-embeds.php';
 require 'includes/class-shortcodes.php';
 
@@ -115,14 +114,6 @@ final class Knight_Lab_Storytelling_Tools {
 	protected $shortcodes;
 
 	/**
-	 * Instance of KLST_Settings
-	 *
-	 * @since	1.0.0
-	 * @var KLST_Settings
-	 */
-	protected $settings;
-
-	/**
 	 * Creates or returns an instance of this class.
 	 *
 	 * @since   1.0.0
@@ -156,7 +147,6 @@ final class Knight_Lab_Storytelling_Tools {
 
 		$this->embeds = new KLST_Embeds( $this );
 		$this->shortcodes = new KLST_Shortcodes( $this );
-		$this->settings = new KLST_Settings( $this );
 	} // END OF PLUGIN CLASSES FUNCTION
 
 	/**
@@ -314,7 +304,6 @@ final class Knight_Lab_Storytelling_Tools {
 			case 'path':
 			case 'embeds':
 			case 'shortcodes':
-			case 'settings':
 				return $this->$field;
 			default:
 				throw new Exception( 'Invalid ' . __CLASS__ . ' property: ' . $field );
