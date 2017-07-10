@@ -1,7 +1,6 @@
 <?php
 /**
  * Plugin Name: Knight Lab Storytelling Tools
- * Plugin URI:  https://labs.inn.org
  * Description: Allows seamless embedding for the Knight Lab Storytelling Tools
  * Version:     1.0.0
  * Author:      innlabs
