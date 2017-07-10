@@ -74,12 +74,12 @@ class KLST_Shortcodes {
 	 * Process shortcode
 	 *
 	 * @since  1.0.0
+	 *
+	 * @param array $atts attributes.
 	 */
 	public function shortcode_output( $atts ) {
 		wp_enqueue_style( 'soundcite-styles' );
 		wp_enqueue_script( 'soundcite-script' );
-
-
 
 		$start = isset( $atts['start'] ) ? ' data-start="' . intval( trim( $atts['start'], '&quot;' ) ) * 1000 . '"' : '';
 		$end = isset( $atts['end'] ) ? ' data-end="' . intval( trim( $atts['end'], '&quot;' ) ) * 1000 . '"' : '';

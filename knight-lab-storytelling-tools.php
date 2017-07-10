@@ -36,8 +36,6 @@
  * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
-
-// Include additional php files here.;
 require 'includes/class-embeds.php';
 require 'includes/class-shortcodes.php';
 
@@ -266,6 +264,7 @@ final class Knight_Lab_Storytelling_Tools {
 	public function requirements_not_met_notice() {
 
 		// Compile default message.
+		// Translators: This is to note missing requirements needed for the plugin to run.
 		$default_message = sprintf( __( 'Knight Lab Storytelling Tools is missing requirements and has been <a href="%s">deactivated</a>. Please make sure all requirements are available.', 'knight-lab-storytelling-tools' ), admin_url( 'plugins.php' ) );
 
 		// Default details to null.

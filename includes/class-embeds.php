@@ -65,8 +65,14 @@ class KLST_Embeds {
 	 * Timeline embed.
 	 *
 	 * @since  1.0.0
+	 *
+	 * @param  array  $matches	regex matches.
+	 * @param  array  $attr		attributes.
+	 * @param  string $url 		url.
+	 * @param  array  $rawattr	raw matches.
 	 */
 	public function wp_embed_knight_lab_timeline( $matches, $attr, $url, $rawattr ) {
+
 		$parsed_url = wp_parse_url( $url );
 		parse_str( $parsed_url['query'], $args );
 
@@ -76,7 +82,7 @@ class KLST_Embeds {
 			'lang' => '',
 			'initial_zoom' => '4',
 			'height' => '650',
-			'width' => '100%%'
+			'width' => '100%%',
 		);
 
 		$args = wp_parse_args( $args, $defaults );
@@ -92,6 +98,11 @@ class KLST_Embeds {
 	 * Storymap embed.
 	 *
 	 * @since  1.0.0
+	 *
+	 * @param  array  $matches	regex matches.
+	 * @param  array  $attr		attributes.
+	 * @param  string $url 		url.
+	 * @param  array  $rawattr	raw matches.
 	 */
 	public function wp_embed_knight_lab_storymap( $matches, $attr, $url, $rawattr ) {
 		$embed = sprintf(
@@ -106,6 +117,11 @@ class KLST_Embeds {
 	 * Juxtapose embed.
 	 *
 	 * @since  1.0.0
+	 *
+	 * @param  array  $matches	regex matches.
+	 * @param  array  $attr		attributes.
+	 * @param  string $url 		url.
+	 * @param  array  $rawattr	raw matches.
 	 */
 	public function wp_embed_knight_lab_juxtapose( $matches, $attr, $url, $rawattr ) {
 		$embed = sprintf(
