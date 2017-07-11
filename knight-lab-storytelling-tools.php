@@ -1,18 +1,18 @@
 <?php
 /**
- * Plugin Name: Knight Lab Storytelling Tools
- * Description: Allows seamless embedding for the Knight Lab Storytelling Tools
+ * Plugin Name: Storytelling Tools
+ * Description: Allows seamless embedding for the Storytelling Tools
  * Version:     1.0.0
  * Author:      innlabs
  * Author URI:  https://labs.inn.org
  * Donate link: https://labs.inn.org
  * License:     GPLv2
- * Text Domain: knight-lab-storytelling-tools
+ * Text Domain: storytelling-tools
  * Domain Path: /languages
  *
  * @link    https://labs.inn.org
  *
- * @package Knight_Lab_Storytelling_Tools
+ * @package Storytelling_Tools
  * @version 1.0.0
  *
  * Built using generator-plugin-wp (https://github.com/WebDevStudios/generator-plugin-wp)
@@ -44,7 +44,7 @@ require 'includes/class-shortcodes.php';
  *
  * @since  1.0.0
  */
-final class Knight_Lab_Storytelling_Tools {
+final class Storytelling_Tools {
 
 	/**
 	 * Current version.
@@ -89,7 +89,7 @@ final class Knight_Lab_Storytelling_Tools {
 	/**
 	 * Singleton instance of plugin.
 	 *
-	 * @var    Knight_Lab_Storytelling_Tools
+	 * @var    Storytelling_Tools
 	 * @since  1.0.0
 	 */
 	protected static $single_instance = null;
@@ -114,7 +114,7 @@ final class Knight_Lab_Storytelling_Tools {
 	 * Creates or returns an instance of this class.
 	 *
 	 * @since   1.0.0
-	 * @return  Knight_Lab_Storytelling_Tools A single instance of this class.
+	 * @return  Storytelling_Tools A single instance of this class.
 	 */
 	public static function get_instance() {
 		if ( null === self::$single_instance ) {
@@ -197,7 +197,7 @@ final class Knight_Lab_Storytelling_Tools {
 		}
 
 		// Load translated strings for plugin.
-		load_plugin_textdomain( 'knight-lab-storytelling-tools', false, dirname( $this->basename ) . '/languages/' );
+		load_plugin_textdomain( 'storytelling-tools', false, dirname( $this->basename ) . '/languages/' );
 
 		// Initialize plugin classes.
 		$this->plugin_classes();
@@ -265,7 +265,7 @@ final class Knight_Lab_Storytelling_Tools {
 
 		// Compile default message.
 		// Translators: This is to note missing requirements needed for the plugin to run.
-		$default_message = sprintf( __( 'Knight Lab Storytelling Tools is missing requirements and has been <a href="%s">deactivated</a>. Please make sure all requirements are available.', 'knight-lab-storytelling-tools' ), admin_url( 'plugins.php' ) );
+		$default_message = sprintf( __( 'Storytelling Tools is missing requirements and has been <a href="%s">deactivated</a>. Please make sure all requirements are available.', 'storytelling-tools' ), admin_url( 'plugins.php' ) );
 
 		// Default details to null.
 		$details = null;
@@ -310,19 +310,19 @@ final class Knight_Lab_Storytelling_Tools {
 }
 
 /**
- * Grab the Knight_Lab_Storytelling_Tools object and return it.
- * Wrapper for Knight_Lab_Storytelling_Tools::get_instance().
+ * Grab the Storytelling_Tools object and return it.
+ * Wrapper for Storytelling_Tools::get_instance().
  *
  * @since  1.0.0
- * @return Knight_Lab_Storytelling_Tools  Singleton instance of plugin class.
+ * @return Storytelling_Tools  Singleton instance of plugin class.
  */
-function knight_lab_storytelling_tools() {
-	return Knight_Lab_Storytelling_Tools::get_instance();
+function storytelling_tools() {
+	return Storytelling_Tools::get_instance();
 }
 
 // Kick it off.
-add_action( 'plugins_loaded', array( knight_lab_storytelling_tools(), 'hooks' ) );
+add_action( 'plugins_loaded', array( storytelling_tools(), 'hooks' ) );
 
 // Activation and deactivation.
-register_activation_hook( __FILE__, array( knight_lab_storytelling_tools(), '_activate' ) );
-register_deactivation_hook( __FILE__, array( knight_lab_storytelling_tools(), '_deactivate' ) );
+register_activation_hook( __FILE__, array( storytelling_tools(), '_activate' ) );
+register_deactivation_hook( __FILE__, array( storytelling_tools(), '_deactivate' ) );

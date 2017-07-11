@@ -1,9 +1,9 @@
 <?php
 /**
- * Knight Lab Storytelling Tools Shortcodes Tests.
+ * Storytelling Tools Shortcodes Tests.
  *
  * @since   1.0.0
- * @package Knight_Lab_Storytelling_Tools
+ * @package Storytelling_Tools
  */
 class KLST_Shortcodes_Test extends WP_UnitTestCase {
 
@@ -22,7 +22,7 @@ class KLST_Shortcodes_Test extends WP_UnitTestCase {
 	 * @since  1.0.0
 	 */
 	function test_class_access() {
-		$this->assertInstanceOf( 'KLST_Shortcodes', knight_lab_storytelling_tools()->shortcodes );
+		$this->assertInstanceOf( 'KLST_Shortcodes', storytelling_tools()->shortcodes );
 	}
 
 	/**

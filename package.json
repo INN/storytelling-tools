@@ -1,8 +1,8 @@
 {
-	"name": "knight-lab-storytelling-tools",
-	"title": "Knight Lab Storytelling Tools",
+	"name": "storytelling-tools",
+	"title": "Storytelling Tools",
 	"version": "1.0.0",
-	"description": "Allows seamless embedding for the Knight Lab Storytelling Tools",
+	"description": "Allows seamless embedding for the Storytelling Tools",
 	"author": {
 		"name": "innlabs",
 		"url": "https://labs.inn.org"

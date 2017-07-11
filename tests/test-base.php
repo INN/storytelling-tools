@@ -1,11 +1,11 @@
 <?php
 /**
- * Knight_Lab_Storytelling_Tools.
+ * Storytelling_Tools.
  *
  * @since   1.0.0
- * @package Knight_Lab_Storytelling_Tools
+ * @package Storytelling_Tools
  */
-class Knight_Lab_Storytelling_Tools_Test extends WP_UnitTestCase {
+class Storytelling_Tools_Test extends WP_UnitTestCase {
 
 	/**
 	 * Test if our class exists.
@@ -13,7 +13,7 @@ class Knight_Lab_Storytelling_Tools_Test extends WP_UnitTestCase {
 	 * @since  1.0.0
 	 */
 	function test_class_exists() {
-		$this->assertTrue( class_exists( 'Knight_Lab_Storytelling_Tools') );
+		$this->assertTrue( class_exists( 'Storytelling_Tools') );
 	}
 
 	/**
@@ -22,7 +22,7 @@ class Knight_Lab_Storytelling_Tools_Test extends WP_UnitTestCase {
 	 * @since  1.0.0
 	 */
 	function test_get_instance() {
-		$this->assertInstanceOf(  'Knight_Lab_Storytelling_Tools', knight_lab_storytelling_tools() );
+		$this->assertInstanceOf(  'Storytelling_Tools', storytelling_tools() );
 	}
 
 	/**

@@ -1,4 +1,4 @@
-=== Knight Lab Storytelling Tools ===
+=== Storytelling Tools ===
 Contributors: innlabs, rclations
 Donate link: https://labs.inn.org
 Tags:
@@ -8,7 +8,7 @@ Stable tag: 1.0.0
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Allows seamless embedding for the Knight Lab Storytelling Tools
+Allows seamless embedding for the Storytelling Tools
 
 == Description ==
 
@@ -33,12 +33,12 @@ Seamless inline audio.
 This plugin adds a shortcode that allows you to embed an mp3 file as an inline text within a story. The plugin will automatically include the Soundcite javascript file on pages using the shortcode (in order to create the audio player).
 You can learn more and see examples of this tool in action at http://soundcite.knightlab.com/
 
-You can learn more information about the Knight Lab Storytelling tools at https://knightlab.northwestern.edu/projects/
+You can learn more information about the Storytelling Tools at https://knightlab.northwestern.edu/projects/
 
 == Installation ==
 
-1. Upload the entire `/knight-lab-storytelling-tools` directory to the `/wp-content/plugins/` directory.
-2. Activate Knight Lab Storytelling Tools through the 'Plugins' menu in WordPress.
+1. Upload the entire `/storytelling-tools` directory to the `/wp-content/plugins/` directory.
+2. Activate Storytelling Tools through the 'Plugins' menu in WordPress.
 
 == Frequently asked questions ==
 

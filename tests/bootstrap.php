@@ -1,9 +1,9 @@
 <?php
 /**
- * Knight_Lab_Storytelling_Tools Test Bootstrapper.
+ * Storytelling_Tools Test Bootstrapper.
  *
  * @since   1.0.0
- * @package Knight_Lab_Storytelling_Tools
+ * @package Storytelling_Tools
  */
 
 // Get our tests directory.
@@ -17,7 +17,7 @@ require_once $_tests_dir . '/includes/functions.php';
  *
  * @since 1.0.0
  */
-function _manually_load_knight_lab_storytelling_tools_plugin() {
+function _manually_load_storytelling_tools_plugin() {
 
 	// Include the REST API main plugin file if we're using it so we can run endpoint tests.
 	if ( class_exists( 'WP_REST_Controller' ) && file_exists( WP_PLUGIN_DIR . '/rest-api/plugin.php' ) ) {
@@ -25,11 +25,11 @@ function _manually_load_knight_lab_storytelling_tools_plugin() {
 	}
 
 	// Require our plugin.
-	require dirname( dirname( __FILE__ ) ) . '/knight-lab-storytelling-tools.php';
+	require dirname( dirname( __FILE__ ) ) . '/storytelling-tools.php';
 }
 
 // Inject in our plugin.
-tests_add_filter( 'muplugins_loaded', '_manually_load_knight_lab_storytelling_tools_plugin' );
+tests_add_filter( 'muplugins_loaded', '_manually_load_storytelling_tools_plugin' );
 
 // Include the main tests bootstrapper.
 require $_tests_dir . '/includes/bootstrap.php';

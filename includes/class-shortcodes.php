@@ -1,13 +1,13 @@
 <?php
 /**
- * Knight Lab Storytelling Tools Shortcodes.
+ * Storytelling Tools Shortcodes.
  *
  * @since   1.0.0
- * @package Knight_Lab_Storytelling_Tools
+ * @package Storytelling_Tools
  */
 
 /**
- * Knight Lab Storytelling Tools Shortcodes.
+ * Storytelling Tools Shortcodes.
  *
  * @since 1.0.0
  */
@@ -17,7 +17,7 @@ class KLST_Shortcodes {
 	 *
 	 * @since 1.0.0
 	 *
-	 * @var   Knight_Lab_Storytelling_Tools
+	 * @var   Storytelling_Tools
 	 */
 	protected $plugin = null;
 
@@ -26,7 +26,7 @@ class KLST_Shortcodes {
 	 *
 	 * @since  1.0.0
 	 *
-	 * @param  Knight_Lab_Storytelling_Tools $plugin Main plugin object.
+	 * @param  Storytelling_Tools $plugin Main plugin object.
 	 */
 	public function __construct( $plugin ) {
 		$this->plugin = $plugin;

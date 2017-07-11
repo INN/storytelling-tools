@@ -1,6 +1,6 @@
 {
-  "name": "knight-lab-storytelling-tools",
-  "description": "Allows seamless embedding for the Knight Lab Storytelling Tools",
+  "name": "storytelling-tools",
+  "description": "Allows seamless embedding for the Storytelling Tools",
   "license": "GPLv2",
   "authors": [
     "innlabs"

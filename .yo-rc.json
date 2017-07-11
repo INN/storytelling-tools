@@ -1,18 +1,18 @@
 {
   "generator-plugin-wp": {
-    "name": "Knight Lab Storytelling Tools",
+    "name": "Storytelling Tools",
     "homepage": "https://labs.inn.org",
-    "description": "Allows seamless embedding for the Knight Lab Storytelling Tools",
+    "description": "Allows seamless embedding for the Storytelling Tools",
     "version": "1.0.0",
     "author": "innlabs",
     "authoremail": "labs@inn.org",
     "authorurl": "https://labs.inn.org",
     "license": "GPLv2",
-    "slug": "knight-lab-storytelling-tools",
-    "classname": "Knight_Lab_Storytelling_Tools",
-    "mainclassname": "Knight_Lab_Storytelling_Tools",
+    "slug": "storytelling-tools",
+    "classname": "Storytelling_Tools",
+    "mainclassname": "Storytelling_Tools",
     "classprefix": "KLST_",
-    "prefix": "knight_lab_storytelling_tools",
+    "prefix": "storytelling_tools",
     "year": 2017,
     "currentVersionWP": "4.7.2"
   }
