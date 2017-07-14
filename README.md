@@ -32,7 +32,7 @@ This plugin adds embed support for image comparisons created at https://juxtapos
 
 4. Soundcite
 Seamless inline audio.
-This plugin adds a shortcode that allows you to embed an mp3 file as an inline text within a story. The plugin will automatically include the Soundcite javascript file on pages using the shortcode (in order to create the audio player).
+This plugin adds a shortcode that allows you to embed an mp3 file as an inline text within a story. The plugin will automatically include the Soundcite JavaScript file on pages using the shortcode (in order to create the audio player).
 You can learn more and see examples of this tool in action at http://soundcite.knightlab.com/
 
 You can learn more information about the Storytelling Tools at https://knightlab.northwestern.edu/projects/
