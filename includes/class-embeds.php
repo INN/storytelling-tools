@@ -81,14 +81,14 @@ class KLST_Embeds {
 			'font' => '',
 			'lang' => '',
 			'initial_zoom' => '4',
-			'height' => '650',
 			'width' => '100%%',
+			'height' => '650',
 		);
 
 		$args = wp_parse_args( $args, $defaults );
 
 		$embed = vsprintf(
-			'<iframe src="https://cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source=%1$s&font=%2$s&lang=%3$s&initial_zoom=%4$s&height=%5$s" width="100%%" height="650" webkitallowfullscreen mozallowfullscreen allowfullscreen frameborder="0"></iframe>',
+			'<iframe src="https://cdn.knightlab.com/libs/timeline/latest/embed/?source=%1$s&font=%2$s&lang=%3$s&initial_zoom=%4$s&width=%5$s&height=%6$s" width="%5$s" height="%6$s" webkitallowfullscreen mozallowfullscreen allowfullscreen frameborder="0"></iframe>',
 			$args
 		);
 		return apply_filters( 'embed_knight_lab_timeline', $embed, $matches, $attr, $url, $rawattr );

@@ -81,6 +81,11 @@ class KLST_Shortcodes {
 		wp_enqueue_style( 'soundcite-styles' );
 		wp_enqueue_script( 'soundcite-script' );
 
+		// If no mp3 file, don't output anything.
+		if ( ! isset( $atts['url'] ) || '' === $atts['url'] ) {
+			return;
+		}
+
 		$start = isset( $atts['start'] ) ? ' data-start="' . intval( trim( $atts['start'], '&quot;' ) ) * 1000 . '"' : '';
 		$end = isset( $atts['end'] ) ? ' data-end="' . intval( trim( $atts['end'], '&quot;' ) ) * 1000 . '"' : '';
 
