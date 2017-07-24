@@ -86,14 +86,14 @@ class KLST_Shortcodes {
 			return;
 		}
 
-		$start = isset( $atts['start'] ) ? ' data-start="' . intval( trim( $atts['start'], '&quot;' ) ) * 1000 . '"' : '';
-		$end = isset( $atts['end'] ) ? ' data-end="' . intval( trim( $atts['end'], '&quot;' ) ) * 1000 . '"' : '';
+		$start = isset( $atts['start'] ) ? ' data-start=' . intval( trim( $atts['start'], '&quot;' ) ) * 1000 : '';
+		$end = isset( $atts['end'] ) ? ' data-end=' . intval( trim( $atts['end'], '&quot;' ) ) * 1000 : '';
 
 		$atts = shortcode_atts( array(
 			'text' => '',
 			'url' => '',
 		), $atts, 'soundcite' );
 
-		return '<span' . $start . $end . ' data-url="' . trim( $atts['url'], '&quot;' ) . '" class="soundcite soundcite-loaded soundcite-play">' . trim( $atts['text'], '&quot;' ) . '</span>';
+		return '<span' . esc_attr( $start ) . esc_attr( $end ) . ' data-url="' . esc_attr( trim( $atts['url'], '&quot;' ) ) . '" class="soundcite soundcite-loaded soundcite-play">' . esc_attr( trim( $atts['text'], '&quot;' ) ) . '</span>';
 	}
 }
