@@ -54,12 +54,14 @@ You can learn more information about the Storytelling Tools at https://knightlab
 = 1.0.0 =
 * First release
 * Add "text" parameter to wysiwyg button
+* Allow decimals in start & end parameters
 
 == Upgrade notice ==
 
 = 1.1 =
 * WordPress.com VIP check fixes - better escaping & encoding
 * Add "text" parameter to wysiwyg button
+* Allow decimals in start & end parameters
 
 = 1.0.0 =
 * First release

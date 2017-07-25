@@ -86,8 +86,8 @@ class KLST_Shortcodes {
 			return;
 		}
 
-		$start = isset( $atts['start'] ) ? ' data-start=' . intval( trim( $atts['start'], '&quot;' ) ) * 1000 : '';
-		$end = isset( $atts['end'] ) ? ' data-end=' . intval( trim( $atts['end'], '&quot;' ) ) * 1000 : '';
+		$start = isset( $atts['start'] ) ? ' data-start=' . floatval( trim( $atts['start'], '&quot;' ) ) * 1000 : '';
+		$end = isset( $atts['end'] ) ? ' data-end=' . floatval( trim( $atts['end'], '&quot;' ) ) * 1000 : '';
 
 		$atts = shortcode_atts( array(
 			'text' => '',
