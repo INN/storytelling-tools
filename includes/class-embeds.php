@@ -87,9 +87,16 @@ class KLST_Embeds {
 
 		$args = wp_parse_args( $args, $defaults );
 
-		$embed = vsprintf(
-			'<iframe src="https://cdn.knightlab.com/libs/timeline/latest/embed/?source=%1$s&font=%2$s&lang=%3$s&initial_zoom=%4$s&width=%5$s&height=%6$s" width="%5$s" height="%6$s" webkitallowfullscreen mozallowfullscreen allowfullscreen frameborder="0"></iframe>',
-			$args
+		$embed = sprintf(
+			'<iframe src="https://cdn.knightlab.com/libs/timeline/latest/embed/?source=%1$s&font=%2$s&lang=%3$s&initial_zoom=%4$s&width=%5$s&height=%6$s" width="%7$s" height="%8$s" webkitallowfullscreen mozallowfullscreen allowfullscreen frameborder="0"></iframe>',
+			rawurlencode( $args['source'] ),
+			rawurlencode( $args['font'] ),
+			rawurlencode( $args['lang'] ),
+			rawurlencode( $args['initial_zoom'] ),
+			rawurlencode( $args['width'] ),
+			rawurlencode( $args['height'] ),
+			esc_attr( $args['width'] ),
+			esc_attr( $args['height'] )
 		);
 		return apply_filters( 'embed_knight_lab_timeline', $embed, $matches, $attr, $url, $rawattr );
 	}
@@ -107,8 +114,8 @@ class KLST_Embeds {
 	public function wp_embed_knight_lab_storymap( $matches, $attr, $url, $rawattr ) {
 		$embed = sprintf(
 			'<iframe src="https://uploads.knightlab.com/storymapjs/%1$s/%2$s/index.html" frameborder="0" width="100%%" height="800"></iframe>',
-			esc_attr( $matches[1] ),
-			esc_attr( $matches[2] )
+			rawurlencode( $matches[1] ),
+			rawurlencode( $matches[2] )
 		);
 		return apply_filters( 'embed_knight_lab_storymap', $embed, $matches, $attr, $url, $rawattr );
 	}
@@ -126,7 +133,7 @@ class KLST_Embeds {
 	public function wp_embed_knight_lab_juxtapose( $matches, $attr, $url, $rawattr ) {
 		$embed = sprintf(
 			'<iframe frameborder="0" class="juxtapose" width="100%%" height="360" src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=%1$s"></iframe>',
-			esc_attr( $matches[1] )
+			rawurlencode( $matches[1] )
 		);
 		return apply_filters( 'embed_knight_lab_juxtapose', $embed, $matches, $attr, $url, $rawattr );
 	}
