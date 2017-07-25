@@ -64,7 +64,7 @@ class KLST_Shortcodes {
 	  echo '<script type="text/javascript">
 	    jQuery(document).ready(function($){
 	       $("#insert-soundcite-button").click(function() {
-					 send_to_editor("[soundcite url=\"\" start=\"\" end=\"\"]");
+					 send_to_editor("[soundcite url=\"\" text=\"\" start=\"\" end=\"\"]");
 				 })
 	    });
 	  </script>';

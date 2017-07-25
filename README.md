@@ -52,6 +52,7 @@ You can learn more information about the Storytelling Tools at https://knightlab
 
 ### 1.1 ###
 * WordPress.com VIP check fixes - better escaping & encoding
+* Add "text" parameter to wysiwyg button
 
 ### 1.0.0 ###
 * First release
@@ -60,6 +61,7 @@ You can learn more information about the Storytelling Tools at https://knightlab
 
 ### 1.1 ###
 * WordPress.com VIP check fixes - better escaping & encoding
+* Add "text" parameter to wysiwyg button
 
 ### 1.0.0 ###
 First Release
