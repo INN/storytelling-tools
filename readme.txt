@@ -4,7 +4,7 @@ Donate link: https://labs.inn.org
 Tags:
 Requires at least: 4.4
 Tested up to: 4.8
-Stable tag: 1.0.0
+Stable tag: 1.1
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -48,10 +48,16 @@ You can learn more information about the Storytelling Tools at https://knightlab
 
 == Changelog ==
 
+= 1.1 =
+* WordPress.com VIP check fixes - better escaping & encoding
+
 = 1.0.0 =
 * First release
 
 == Upgrade notice ==
+
+= 1.1 =
+* WordPress.com VIP check fixes - better escaping & encoding
 
 = 1.0.0 =
 * First release
