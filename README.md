@@ -4,7 +4,7 @@
 **Tags:**  
 **Requires at least:** 4.4  
 **Tested up to:**      4.8
-**Stable tag:**        1.1  
+**Stable tag:**        1.2  
 **License:**           GPLv2  
 **License URI:**       http://www.gnu.org/licenses/gpl-2.0.html  
 
@@ -49,6 +49,10 @@ You can learn more information about the Storytelling Tools at https://knightlab
 
 
 ## Changelog ##
+
+### 1.2 ###
+* Add support for TimelineJS version 3, introduced in summer 2017
+* Minor text fixes
 
 ### 1.1 ###
 * WordPress.com VIP check fixes - better escaping & encoding

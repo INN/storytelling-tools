@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Storytelling Tools
  * Description: Allows seamless embedding for the Storytelling Tools
- * Version:     1.1
+ * Version:     1.2
  * Author:      innlabs
  * Author URI:  https://labs.inn.org
  * Donate link: https://labs.inn.org
