@@ -8,7 +8,7 @@ Stable tag: 1.1
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Allows seamless embedding for the Storytelling Tools
+Allows seamless embedding for the Knight Lab Storytelling Tools
 
 == Description ==
 

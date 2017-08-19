@@ -10,7 +10,7 @@
 
 ## Description ##
 
-Allows seamless embedding for the Storytelling Tools
+Allows seamless embedding for the Knight Lab Storytelling Tools
 
 ## Installation ##
 
