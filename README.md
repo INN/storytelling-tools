@@ -47,6 +47,11 @@ You can learn more information about the Storytelling Tools at https://knightlab
 
 ## Screenshots ##
 
+1. Example of the Juxtapose embed
+![](assets/screenshot-1.gif)
+
+2. Example of the Timeline embed
+![](assets/screenshot-2.gif)
 
 ## Changelog ##
 
